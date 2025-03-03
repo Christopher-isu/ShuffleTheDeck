@@ -14,14 +14,17 @@ Option Strict On 'forces all data types to match
 ''' The deck is operates as a 2D array of Booleans and is represented inform of a grid of characters. 
 ''' The array has 4 rows (one for each suit) and 13 columns (one for each value).
 ''' The deck is initialized as all undealt cards. When a card is drawn, 
-''' the corresponding element in the array is set to True and represented as a solid square character.
+''' the corresponding element in the array is set to True and represented as a solid square character on the grid.
 ''' </summary>
 
 Module ShuffleDeck
     ''' <summary>
-    ''' Declare variables at the module level, which means they are accessible by all the functions and subroutines
-    ''' within the same module. This allows all the procedures to read from and modify the same shared array,
-    ''' maintaining the state of the deck across multiple function calls and avoids declaring a static variable.
+    ''' Declare variables at the module level to make them accessible by all the functions,
+    ''' this approach avoids declaring static variables.
+    ''' 
+    ''' NOTE: It was my choice to do it this way and I know that this is not the best practice for larger programs!
+    ''' For a short code like this, it is acceptable to use module-level variables, but for larger programs,
+    ''' it is recommended to use classes and objects to encapsulate the state of the deck.
     ''' </summary>
 
     Dim deck(3, 12) As Boolean ' Boolean array to track if a card has already been dealt
